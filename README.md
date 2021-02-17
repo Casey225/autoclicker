@@ -16,9 +16,9 @@ Copy `target/release/autoclicker` and `ac_settings.ron` into a directory of your
 **THESE FILES MUST BE IN THE SAME DIRECTORY**
 
 # Keybind setup
-Find the device you would like to bind your enable key too in `/dev/input/by-id/`.
+Find the device you would like to bind your enable key to in `/dev/input/by-id/`
 
-The device id will be either `usb-KEYBOARD-NAME-event-kbd` or `usb-MOUSE-NAME-event-mouse`.
+The device id will be either `usb-KEYBOARD-NAME-event-kbd` or `usb-MOUSE-NAME-event-mouse`
 
 Then run
 
@@ -27,6 +27,10 @@ Then run
 Click the button/key you would like to bind, then make note of the key id. It should look like KEY_XXXX or BTN_XXXX.
 
 Edit the `ac_settings.ron` file with your specific device-id and key-id.
+
+# Delay
+
+Edit the `ac_settings.ron` file and change the delay value. This is a floating point number representing the number of seconds between clicks. Default: 0.1 sec.
 
 # Execution
 Run with `sudo ./autoclicker`
