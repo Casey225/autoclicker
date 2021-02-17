@@ -1,0 +1,8 @@
+(
+    // Delay float
+    delay: 0.1,
+    
+    // Input binding
+    dev_id: "usb-SteelSeries_SteelSeries_Rival_110_Gaming_Mouse-if01-event-mouse",
+    key: "BTN_EXTRA"
+)
