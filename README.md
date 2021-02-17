@@ -33,4 +33,4 @@ Edit the `ac_settings.ron` file with your specific device-id and key-id.
 Edit the `ac_settings.ron` file and change the delay value. This is a floating point number representing the number of seconds between clicks. Default: 0.1 sec.
 
 # Execution
-Run with `sudo ./autoclicker`
+Run with `sudo ./autoclicker` and stop with Ctrl+C
