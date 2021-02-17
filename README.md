@@ -5,7 +5,7 @@ Linux only.
 
 # Installation
 
-Install cargo (for compilation only), evtest, and xdotool
+Dependancies: `cargo` (for compilation only), `evtest`, and `xdotool`
 
 Download the source and compile it with
 
