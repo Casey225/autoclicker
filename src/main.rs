@@ -16,7 +16,7 @@ struct Settings {
 fn main() {
     
     // Reading input arguments from settings file
-    let path = format!["{}/ac_settings.ron", env!("CARGO_MANIFEST_DIR")];
+    let path = format!["{}/ac_settings.ron", env::current_dir().expect(" ").into_os_string().into_string().expect(" ")];
 
     let f = File::open(&path).expect("Failed opening file");
 
