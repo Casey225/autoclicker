@@ -5,6 +5,8 @@ use serde::Deserialize;
 use std::fs::File;
 use std::env;
 
+const SETTING_FILE_NAME : &str = "ac_settings.ron";
+
 #[derive(Deserialize)]
 struct Settings {
     delay: f32,
@@ -15,15 +17,17 @@ struct Settings {
 
 fn main() {
     
-    // Reading input arguments from settings file
-    let path = format!["{}/ac_settings.ron", env::current_dir().expect(" ").into_os_string().into_string().expect(" ")];
+    // Appending current directory to SETTING_FILE_NAME
+    let path = format!["{}/{}", env::current_dir().expect(" ").into_os_string().into_string().expect(" "), SETTING_FILE_NAME];
 
-    let f = File::open(&path).expect("Failed opening file");
+    // Opening file at appended path
+    let f = File::open(&path).expect(format!["Failed opening {}", SETTING_FILE_NAME]);
 
+    // Attempting to deserialize .ron file to a Settings struct
     let settings: Settings = match from_reader(f) {
         Ok(s) => s,
         Err(_e) => {
-            eprintln!("Could not open file: settings.ron");
+            eprintln!("Invalid {} syntax.", SETTING_FILE_NAME);
             process::exit(1);
         }
     };
